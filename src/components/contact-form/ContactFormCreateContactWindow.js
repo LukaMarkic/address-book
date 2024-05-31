@@ -11,7 +11,6 @@ import { getDatabaseCollection } from '../../api/firbaseInitalization'
 import { getContactInfoDataFromForm, getInputErorrs } from '../../help/contactFormValidation'
 import useContactsContext from '../../hooks/useContactContext'
 import useUserContext from '../../hooks/useUserContext'
-import { useNavigate } from 'react-router-dom'
 
 const ContactFormCreateContactWindow = () => {
 
