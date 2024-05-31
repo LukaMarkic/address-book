@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Imenik (Address-Book)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ovaj projekt predstavlja projektni zadatak izrađen kroz stručnu praksu u tvrtki APIS IT d.o.o.. Projekt predstavlja mrežnu starnicu imanika u kojoj je moguća pohrana pojednikih kontakata sa sljedećim podacima o kontaktu: ime, prezime, datum rođenja, adresa stanovanja (Ulica i kućni broj), poštanski broj, broj telefona i email adresa. Omogućava uređivanje, dodavanje kontakta, a ovisno o privilegijama računa (radi li se o adminu ili običnom korisniku) obogućeno je i brisanje kontakata. Svaki korisnik ima popis svojih kontakata, a posebni administrator ima pristup svim kontaktima te su mu omogućene sve privilegije (dodavanje, urešivanje i brisanje).
 
-## Available Scripts
+## Korištene tehnologije
 
-In the project directory, you can run:
+Aplikacija je izrađena korištenjem JavaScript razvojnog okvira [ReactJS](https://react.dev/). Za potrebe stilizacije korišten je CSS kao i CSS predproceski alat za stiliziranje [Syntactically Awesome Style Sheets -SASS](https://sass-lang.com/) (.scss). Kao BaaS uspuga korištena je okvir [Firebase](https://firebase.google.com/) koji je omogućio odtvarivanja prijave korisnika, kao i pohranu podataka.
 
-### `npm start`
+## Strukutra
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Zbog optimizacijskih razloga (brže ponovne izgradnje), webpack obrađuje samo datoteke koje se nalaze unutar /src direktorija. Unutar ovog dirktorija je sadržana glavna logika aplikacije jer upravo u njemu trebaju biti sadžane skriptne datoteka (.js) i datoteke za stilsko uređenje dokumenta (.css i .scss). U nastavku je moguće vidjeti strukturu /src direktorija.
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<div style="background-color: #333; color: white; padding: 10px; border-radius: 5px">
 
-### `npm test`
+- /src
+  - /api
+  - /components
+    - /contact-form
+    - /header
+    - /home
+    - /login
+    - /shared
+  - /context
+  - /data
+  - /help
+  - /hooks
+  - /images
+  - /pages
+  - /styles
+  - App.js
+  - index.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</div>
+<br />
 
-### `npm run build`
+Dirketorij je strukturiran podjelom koponenti na dijelove vezane uz pojedine stranice: Login, Home i ContactForm.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Pokretanje
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Instaliranje Node.js i Node Package Manger paketa
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Kako bi bilo moguće pokretanje potrebno je imati instaliran Node.js odnosno Node Package Manger (NPM). Ukoliko nije instaliran instalacijkom paketu je moguće pristupiti putem ljedeće poveznice: [NodeJS Download page](https://nodejs.org/en/download).
+Putem navedne poveznice pistupa se službenoj stranici gdje je moguće preuzeti instalcijske pakete LTS (Long-Term Support) ili Current verzije za odgovarajući operacijski sustav (Windows, MacOS, Linux). Preporuča se preuzimanje LTS verzije instalacijskog paketa. Nakon instalcije potrebno je pokrenuti instalcijki paket i sljediti upute. Nakon završetka instalacije možemo provjeriti je li ona bila uspješna upisivanjem sljedećih naredbi u naredbeni redak:
 
-### `npm run eject`
+```bash
+node -v
+npm -v
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ukoliko kao ispis dobijemo verziju programa, instalacija je uspješna.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_Ovaj projekt je konkrentno razvijen na veriji Node.js-a v18.13.0 i s verzijom NPM-a 8.19.3._
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Kloniranje repozitorija:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Prvo je potrebno klonirati repozitorij za što je moguće koristiti sljedeću _bash_ naredbu:
 
-## Learn More
+```bash
+git clone https://github.com/LukaMarkic/address-book.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Navigacija do direktorija:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Promijenite svoj trenutni direktorij na direktorij kloniranog projekta. Za navigaciju kroz direktorije moguće je korsiti _bash_ naredbu **cd**, a primjer njezinog poziva prikazan je u nastavku:
 
-### Code Splitting
+```bash
+cd ./address-book
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. Instaliranje paketa i ovisnosti:
 
-### Analyzing the Bundle Size
+Kako bi pokratenje projekta bilo usješno potrebno je instalirati ovisnosi (eng. _Dependencies_). Navedeno je potrebno uraditi korištenjem upisivanje prikazane naredbe u naredbeni redak.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
+```
 
-### Making a Progressive Web App
+### 4. Pokretanje projekta (razvojog servera/izgradnja aplikacije):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Ukoliko smo gotovi s predhodnim koracima, možemo pokrenuti razvojni server kako bi se izvodila naša React aplikacija. Potrebno je koristi **start** naredbu.
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Na ovaj način smo aplikaciju pokrenuli u razvojnom načinu rada, no ako je aplikacija spremna za distribuciju istu je moguće "izgraditi" korištnjem
+**run build** naredbe.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm run build
+```
