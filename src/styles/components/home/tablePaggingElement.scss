@@ -1,0 +1,52 @@
+@use './../../colors';
+@use './../../mixins';
+
+.table-pagging-container{
+    @include mixins.flexDispaly($justify-content: space-between, $align-items: center);
+}
+
+.table-pagging-container > div{
+    @include mixins.flexDispaly($gap: 5px);
+}
+
+.table-pagging-container{
+    margin-top: 20px;
+}
+
+.table-pagging-container > div button{
+    @include mixins.text($font-size: 15.6px);
+    @include mixins.addBorder($color: colors.$table-pagging-btn-primary-border-color);
+    background-color: colors.$table-pagging-btn-primary-background-color;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 12px;
+    position: relative;
+}
+.table-pagging-container > div button:hover{
+    transition: 450ms;
+    background-color: colors.$table-pagging-btn-hover-background-color;
+    color: colors.$table-pagging-btn-hover-text-color;
+}
+.table-pagging-container > div button:not(:hover){
+    transition: 750ms;
+}
+
+.table-pagging-container #page-progress-text{
+    font-weight: 700;
+}
+
+#toggle-contact-delete-visibility.hide{
+    display: none
+}
+
+@media screen and (max-width: 490px) {
+
+    .table-pagging-container div button{
+        font-size: 13px;
+        padding: 4px 6px;
+    }
+
+    .table-pagging-container p{
+        font-size: 12px;
+    }
+}

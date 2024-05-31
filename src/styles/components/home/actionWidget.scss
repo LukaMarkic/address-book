@@ -1,0 +1,15 @@
+@use './../../colors';
+
+.action-widget-contianer{
+    width: fit-content;
+}
+
+.action-widget-contianer:hover > div{
+    cursor: pointer;
+    transition: 450ms;
+    background-color: colors.$action-widget-hover-background-color;
+}
+
+.action-widget-contianer:not(:hover) > div{
+    transition: 750ms;
+}

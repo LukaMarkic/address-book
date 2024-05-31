@@ -1,0 +1,17 @@
+@use './../../mixins';
+
+.background-image-holder {
+    @include mixins.flexDispaly($align-items: center, $justify-content: flex-end);
+    position: relative;
+    height: inherit;
+    min-width: 270px;
+    >img{
+        height: calc(100vh - 58px);
+    }
+    >div{
+        position: absolute;
+        left: calc(15% - 20px);
+        top: 100px;
+    }
+    
+  }

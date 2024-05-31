@@ -1,0 +1,6 @@
+@use './../../colors';
+@use './../../mixins';
+
+.contact-form-error-message{
+    @include mixins.text($font-size: 14px, $color: colors.$contact-error-message-text-color);
+}

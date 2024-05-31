@@ -1,0 +1,61 @@
+@use './../../colors';
+@use './../../mixins';
+
+.profile-img-container{
+    display: flex;
+    padding: 2px;
+    background-color: colors.$windows-background-primary-color;
+    border-radius: 48px;
+    position: relative;
+}
+
+.profile-img-container>img{
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+}
+
+#profile-dropdown-window{
+    box-sizing: border-box;
+    width: 135px;
+    position: absolute;
+    left: -120px;
+    top: 38.8px;
+    background-color: colors.$windows-background-primary-color;
+    @include mixins.addBorder($color: colors.$dropdown-window-border-color);
+    border-radius: 5px 0px 5px 5px;
+}
+
+#profile-window{
+    padding: 18px 24px;
+    @include mixins.flexDispaly($flex-direction: column, $align-items: center, $gap: 6px);
+}
+
+#profile-username{
+    @include mixins.text($font-size: 16px, $font-weight: 600, $color: colors.$profile-dropdown-usrname-text-color);
+}
+
+#profile-status{
+    @include mixins.text($font-size: 15px, $font-weight: 400, $color: colors.$profile-dropdown-status-text-color);
+    margin-bottom: 18px;
+}
+
+#profile-dropdown-logout-btn{
+    background-color: colors.$dropdown-window-btn-primary-background-color;
+    border: none;
+    border-top: 1px solid colors.$dropdown-window-btn-primary-border-color;
+    border-radius: 0px 0px 5px 5px;
+    padding: 8px 12px;
+    width: 100%;
+    @include mixins.text($font-size: 15px, $font-weight: 400, $color: colors.$profile-dropdown-status-text-color);
+    cursor: pointer;
+}
+
+#profile-dropdown-logout-btn:hover{
+    transition: 450ms;
+    background-color: colors.$dropdown-window-btn-hover-color;
+}
+
+#profile-dropdown-logout-btn:not(:hover){
+    transition: 450ms;
+}

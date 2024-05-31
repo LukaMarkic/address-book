@@ -1,0 +1,9 @@
+@use './../../colors';
+@use './../../mixins';
+
+#warrning-feedback-message{
+    @include mixins.text($color: colors.$warring-feedback-message-text-color, $font-size: 17px, $font-weight: 500);
+    margin-bottom: -30px;
+    padding-top: 20px;
+    letter-spacing: 0.34px;
+}

@@ -1,0 +1,40 @@
+@use './../../colors';
+@use './../../mixins';
+
+.contact-input-container{
+    @include mixins.flexDispaly($flex-direction: column, $align-items: start);
+  }
+
+  .contact-input-container input{
+    box-sizing: border-box;
+  }
+
+  .contact-input-container label{
+    @include mixins.text($font-weight: 600);
+}
+
+.contact-input-container  input{
+    @include mixins.flexDispaly($flex-direction: column);
+    outline: none;
+    padding: 6px 8px;
+    background-color: colors.$windows-background-primary-color;
+    @include mixins.addBorder($color: colors.$contact-input-border-color);
+    @include mixins.text($font-family: "Cabin", $font-size: 16px, $line-height: 22px, $color: colors.$contact-input-filed-primary-text-color);
+    border-radius: 5px;
+    margin-top: 4px;
+    font-feature-settings: "clig" off, "liga" off;
+}
+
+
+@media screen and (max-width: 520px) {
+
+  .contact-input-container{
+    label{
+      font-size: 16px;
+    }
+    input{
+      font-size: 14px;
+    }
+  }
+
+}

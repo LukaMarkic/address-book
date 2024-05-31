@@ -1,0 +1,48 @@
+@use './../../colors';
+@use './../../mixins';
+
+.home-page-widget{
+    @include mixins.flexDispaly($flex-direction: column, $gap: 10px);
+    @include mixins.addBorder($color: colors.$home-page-widget-primary-border-color);
+    background-color: colors.$windows-background-primary-color;
+    box-sizing: border-box;
+    width: 200px;
+    border-radius: 5px;
+    padding: 12px 18px;
+}
+
+.home-page-widget h3{
+    @include mixins.text($font-size: 18px, $font-weight: 600, $color: colors.$home-page-widget-primary-text-color);
+}
+
+.home-page-widget p{
+    margin-top: 10px;
+    @include mixins.text($font-size: 17px, $font-weight: 500, $color: colors.$home-page-widget-primary-text-color);
+}
+
+@media screen and (max-width: 560px) {
+
+    .home-page-widget{
+        width: 100%;
+    }
+    .action-widget-contianer{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    
+    .home-page-widget{
+
+        padding: 8px 12px;
+        
+        h3{
+            font-size: 15px;
+        }
+
+        p{
+            margin-top: 4px;
+            font-size: 14px;
+        }
+    } 
+}

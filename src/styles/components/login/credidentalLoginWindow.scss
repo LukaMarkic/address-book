@@ -1,0 +1,125 @@
+@use './../../colors';
+@use './../../mixins';
+
+.credidential-container {
+    padding: 50px 60px;
+    width: 420px;
+    height: 410px;
+    border-radius: 14px;
+    @include mixins.addBorder($color: colors.$creditental-window-primary-border-color);
+    background: colors.$windows-background-primary-color;
+    text-align: start;
+
+    button {
+        width: 100%;
+        background-color: colors.$login-submit-btn-primary-backround-color;
+        @include mixins.text($font-family: 18px, $font-weight: 600, $line-height: 28px, $color: colors.$login-submit-btn-primary-text-color);
+        border-radius: 20px;
+        padding: 10px 24px;
+        margin: 0;
+        border: none;
+        margin-top: 70px;
+    }
+    
+    button:hover {
+        cursor: pointer;
+        transition: 450ms;
+        background-color: colors.$login-submit-btn-hover-backround-hover-color;
+    }
+    
+    button:not(:hover) {
+        transition: 450ms;
+    }
+  }
+
+  .credidential-container h2 {
+    @include mixins.text($font-size: 36px, $font-weight: 600);
+    letter-spacing: 0.36px;
+    margin-bottom: 67px;
+  }
+
+  .credidential-container > form > div:nth-child(1) {
+    @include mixins.flexDispaly($flex-direction: column, $gap: 30px);
+  }
+
+  @media screen and (max-width: 660px) {
+    .credidential-container{
+        width: 300px;
+        left: calc(50vw - 200px);
+        padding: 30px 50px;
+        top: 50px;
+
+        button{
+            font-size: 14px;
+        } 
+    }
+
+    .credidential-container h2{
+        font-size: 28px;
+        margin-bottom: 34px;
+    }
+  }
+
+  @media screen and (max-width: 510px) {
+
+    .credidential-container{
+        width: 250px;
+        left: calc(50vw - 160px);
+        padding: 24px 30px;
+        top: 40px;
+
+        button{
+          padding: 6px 8px;
+        }
+  
+    }
+
+    .credidential-container > form > div:nth-child(1) {
+        gap: 10px;
+        margin-bottom: 0px;
+      }
+    
+  }
+
+  @media screen and (max-width: 420px) {
+
+    body{
+      min-width: 270px;
+    }
+
+    .credidential-container h2{
+        font-size: 26px;
+        margin-bottom: 28px;
+    }
+
+    .credidential-container{
+        width: 240px;
+        left: calc(50vw - 150px);
+        top: 20px;
+
+        button{
+          padding: 4px 8px;
+        }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .credidential-container{
+        width: 220px;
+        left: calc(50vw - 140px);
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+
+    .credidential-container h2{
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .credidential-container{
+        width: 200px;
+        left: calc(50vw - 132.5px);
+    }
+  }
+

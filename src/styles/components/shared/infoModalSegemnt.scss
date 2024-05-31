@@ -1,0 +1,38 @@
+@use './../../colors';
+@use './../../mixins';
+
+.info-modal-segemnt{
+    @include mixins.flexDispaly($gap: 10px);
+    @include mixins.addBorder($color: colors.$modal-info-segemnt-border-color);
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+.info-modal-segemnt img{
+    height: 20px;
+}
+
+.info-modal-segemnt p, .info-modal-segemnt a{
+    text-decoration: none;
+    @include mixins.text($font-size: 17px, $font-weight: 600, $color: colors.$modal-info-segemnt-primary-text-color);
+}
+
+@media screen and (max-width: 650px) {
+
+    .info-modal-segemnt img{
+        height: 14px;
+    }
+
+     .info-modal-segemnt{
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 475px) {
+
+    .info-modal-segemnt{
+        p,a{
+            font-size: 14px;
+        }
+    }
+}

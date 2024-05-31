@@ -1,0 +1,37 @@
+@use './../../colors';
+@use './../../mixins';
+
+.view-per-page-selector{
+    width: fit-content;
+    @include mixins.flexDispaly($flex-direction: column, $gap: 4px);
+    
+    label, select{
+        @include mixins.text($font-size: 16px);
+    }
+
+    select{
+        background-color: white;
+        border: none;
+        @include mixins.addBorder($color: colors.$table-windiw-primary-border-color);
+        border-radius: 4px
+    }
+}
+
+
+@media screen and (max-width: 730px) {
+    .view-per-page-selector{
+        flex-direction: row;
+    }
+}
+
+
+@media screen and (max-width: 490px) {
+
+    .view-per-page-selector{
+
+        label, select, option{
+            font-size: 13px;
+        }
+
+    } 
+}

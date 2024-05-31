@@ -1,0 +1,36 @@
+@use './../../colors';
+@use './../../mixins';
+
+.header-bar-container{
+    @include mixins.flexDispaly($flex-direction: column);
+}
+
+.header-bar{
+    background-color: colors.$header-bar-background-color;
+    padding: 10px 20px;
+    @include mixins.flexDispaly($justify-content: space-between, $align-items: center);
+    z-index: 2;
+}
+
+.header-bar>h1{
+    @include mixins.text($color: colors.$secondary-text-color, $font-family: "Kulim Park", $font-size: 32px, $font-weight: 600);
+}
+
+.header-bar>div{
+    @include mixins.flexDispaly($align-items: end);
+}
+
+.header-bar > #toggle-mobile-menu-icon{
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 560px) {
+    .header-bar > div{
+        display: none;
+    }
+
+    .header-bar > #toggle-mobile-menu-icon{
+        display: block;
+    }
+}

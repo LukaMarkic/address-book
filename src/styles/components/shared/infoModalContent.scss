@@ -1,0 +1,166 @@
+@use './../../colors';
+@use './../../mixins';
+
+.info-modal-content{
+    @include mixins.flexDispaly($flex-direction: column, $gap: 60px);
+}
+
+.modal-window-contact-info-header{
+    @include mixins.flexDispaly($flex-direction: column, $justify-content: center, $align-items: center);
+}
+
+.info-modal-content-main{
+    @include mixins.flexDispaly($flex-direction: column, $gap: 40px)
+}
+
+.modal-window-contact-info-header h2{
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.modal-window-contact-info-header img{
+    width: 90px;
+}
+
+.modal-content{
+    @include mixins.flexDispaly($flex-direction: column, $gap: 30px);
+
+}
+
+.modal-window-contact-info-segemnt-container{
+    @include mixins.flexDispaly($flex-direction: column, $gap: 30px);
+}
+
+.modal-window-contact-info-segemnt-container > div{
+    @include mixins.flexDispaly($flex-direction: column, $gap: 30px);
+}
+
+.info-modal-window-buttons-container{
+    @include mixins.flexDispaly($gap: 20px)
+}
+
+.info-modal-window-buttons-container button{
+    @include mixins.flexDispaly( $gap: 10px);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.edit-contact-btn, .delete-contact-btn{
+    padding: 8px;
+}
+
+.edit-contact-btn img, .delete-contact-btn img{
+    height: 18px;
+    width: 18px;
+}
+
+.edit-contact-btn p, .delete-contact-btn p{
+    color: colors.$modal-info-btn-primary-text-color;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.edit-contact-btn{
+    background-color: colors.$modal-edit-info-btn-primary-background-color;
+}
+
+.edit-contact-btn:hover{
+    transition: 750ms;
+    background-color: colors.$modal-edit-info-btn-hover-background-color;
+}
+
+.edit-contact-btn:not(:hover){
+    transition: 750ms;
+}
+
+.delete-contact-btn{
+    background-color: colors.$modal-delete-info-btn-primary-background-color;
+}
+
+.delete-contact-btn:hover{
+    transition: 750ms;
+    background-color: colors.$modal-delete-info-btn-hover-background-color;
+}
+
+.delete-contact-btn:not(:hover){
+    transition: 750ms;
+}
+
+@media screen and (max-width: 650px) {
+
+    .info-modal-content{
+        gap: 30px;
+    }
+
+    .modal-window-contact-info-header{
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .modal-window-contact-info-header img{
+        height: 24px;
+        width: 24px;
+    }
+
+    .modal-window-contact-info-segemnt-container{
+        gap: 20px;
+    }
+
+    .modal-window-contact-info-segemnt-container{
+        padding: 5px 8px;
+        align-items: center;
+    }
+
+    .modal-window-contact-info-segemnt-container >div{
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-modal-window-buttons-container{
+        margin-top: 10px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    #fullname-text{
+        font-size: 18px;
+    }
+
+    .info-modal-window-buttons-container button{
+        padding: 8px 8px;
+        font-size: 14px;
+        width: fit-content;
+    }
+
+    .info-modal-window-buttons-container button img{
+        height: 14px;
+    }
+
+    .info-modal-window-buttons-container button p{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+
+    #fullname-text{
+        font-size: 14px;
+    }
+
+    .info-modal-window-buttons-container button{
+        padding: 6px 12px;
+        font-size: 15px;
+    }
+
+    .info-modal-window-buttons-container{
+        gap: 20px
+    }
+
+    .info-modal-window-buttons-container button img{
+        display: none;
+    }
+}

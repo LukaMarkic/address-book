@@ -1,0 +1,66 @@
+@use './../../colors';
+@use './../../mixins';
+
+.home-page{
+    padding: 20px 54px;
+    @include mixins.flexDispaly($gap: 40px);
+}
+
+.home-page-widget-segment{
+    @include mixins.flexDispaly($flex-direction: column, $gap: 10px);
+}
+
+@media screen and (max-width: 730px) {
+    .home-page{
+        flex-direction: column;
+    }
+
+    .home-page-widget-segment{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .home-page{
+        padding: 14px 20px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+    body{
+        min-width: 290px;
+    }
+
+    .home-page{
+        padding: 14px 5px;
+        min-width: 226px;
+        gap: 20px;
+    }
+
+    .contact-content-table th, .contact-content-table td{
+        font-size: 12px;
+        padding: 8px 4px;
+        height: 12px;
+    }
+
+    #table-move-left-icon, #table-move-right-icon{
+        height: 12px;
+    }
+    
+    .action-td-container img{
+        height: 16.4px;
+    }
+
+    .navigation-right-column-element{
+        right: 80.4px;  
+    }
+
+    .action-column-element{
+        box-sizing: border-box;
+        min-width: 88px;
+    }
+
+}

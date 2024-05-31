@@ -1,0 +1,24 @@
+@use './../../colors';
+@use './../../mixins';
+
+.header-menu{
+    @include mixins.flexDispaly($gap: 24px);
+    margin-right: 64px;
+    margin-bottom: 5px;
+}
+
+.header-menu a{
+    @include mixins.text($font-size: 18px, $color: colors.$secondary-text-color, $font-family: "Kulim Park", $font-weight: 600);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header-menu a:hover{
+    transition: 450ms;
+    color: colors.$header-hover-text-color;
+}
+
+.header-menu a:not(:hover){
+    transition: 750ms;
+
+}

@@ -1,0 +1,69 @@
+@use './../../colors';
+@use './../../mixins';
+
+.alert-modal-content{
+    @include mixins.flexDispaly($flex-direction: column, $gap: 30px);
+}
+
+#modal-window-message{
+    @include mixins.text($font-size: 18px, $font-weight: 500);
+}
+
+.modal-window-buttons-container{
+    margin-top: 20px;
+    @include mixins.flexDispaly($justify-content: start, $gap: 30px);
+}
+
+.modal-window-buttons-container button{
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    @include mixins.text($font-size: 16px, $font-weight: 600);
+    cursor: pointer;
+}
+
+.modal-window-buttons-container .confirm-btn{
+    background-color: colors.$contact-submit-btn-primary-background-color;
+}
+
+.modal-window-buttons-container .confirm-btn:hover{
+    transition: 750ms;
+    background-color: colors.$contact-submit-btn-hover-background-color;
+}
+
+.modal-window-buttons-container .confirm-btn:not(:hover){
+    transition: 750ms;
+}
+
+.modal-window-buttons-container .cancel-btn{
+    background-color: colors.$modal-cancel-btn-primary-background-color;
+}
+
+.modal-window-buttons-container .cancel-btn:hover{
+    transition: 750ms;
+    background-color: colors.$modal-cancel-btn-hover-color;
+}
+
+.modal-window-buttons-container .cancel-btn:not(:hover){
+    transition: 750ms;
+}
+
+
+@media screen and (max-width: 475px) {
+    .modal-window-container{
+        font-size: 14px;
+    }
+
+    .alert-modal-content p{
+        font-size: 15px;
+    }
+
+    .modal-window-buttons-container button{
+        padding: 6px 12px;
+        font-size: 15px;
+    }
+
+    .modal-window-buttons-container{
+        gap: 20px
+    }
+}

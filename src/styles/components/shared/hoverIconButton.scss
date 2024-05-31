@@ -1,0 +1,29 @@
+.hover-icon-container{
+    cursor: pointer;
+    .inactive-icon-img{
+        display: block;
+    }
+
+    .hovered-icon-img{
+        display: none;
+    }
+}
+
+.hover-icon-container:hover{
+
+    .inactive-icon-img{
+        display: none;
+    }
+
+    .hovered-icon-img{
+        display: block;
+    }
+}
+
+.MuiTooltip-tooltip{
+    font-size: 12px !important;
+    padding: 6px 6px 4px !important;
+    border: 1px solid #c0c0c0;
+    background-color: #FFFFFF !important;
+    color: #000 !important;
+}

@@ -1,0 +1,58 @@
+@use './../../colors';
+@use './../../mixins';
+
+.credidential-container-input-continer {
+    @include mixins.flexDispaly($flex-direction: column, $align-items: start, $gap: 9px);
+  }
+
+  .credidential-container-input-continer.error{
+    border-color: colors.$contact-error-input-border-color;
+  }
+
+  .credidential-container-input-continer label {
+    @include mixins.text($font-size: 18px, $font-weight: 500, $color: colors.$login-label-primary-text-color, $line-height: 20px);
+    letter-spacing: -0.154px;
+    margin-bottom: 1px;
+  }
+
+  .credidential-container-input-continer > div {
+    @include mixins.flexDispaly($justify-content: space-between, $align-items: center);
+    border-radius: 12px;
+    @include mixins.addBorder($color: colors.$login-input-border-color);
+    padding: 7px 7px 8px 10px;
+    width: 100%;
+    background: colors.$login-input-background-color;
+    box-shadow: 0px 2px 0px 0px rgba(231, 235, 238, 0.2) inset;
+    box-sizing: border-box;
+    height: 43px;
+  }
+
+  .credidential-container-input-continer > div input {
+    outline: none ;
+    background: transparent;
+    font-family: "Dosis", sans-serif;
+    @include mixins.text($font-size: 18px, $color: colors.$login-primary-input-text-color, $line-height: 24px);
+    border: none;
+    font-feature-settings: "clig" off, "liga" off;
+    letter-spacing: -0.154px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 510px) {
+
+    .credidential-container-input-continer label{
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .credidential-container-input-continer > div{
+        padding: 4px;
+    }
+    .credidential-container-input-continer > div input{
+        font-size: 16px;
+    }
+    
+  }
+
+
+

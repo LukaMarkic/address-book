@@ -1,0 +1,90 @@
+@use './../../colors';
+@use './../../mixins';
+
+.modal-window-container{
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: colors.$modal-shadow-background-color;
+    @include mixins.flexDispaly($justify-content: center, $align-items: center);
+    display: none;
+}
+
+.modal-window{
+    box-sizing: border-box;
+    background-color: colors.$windows-background-primary-color;
+    padding: 24px 26px;
+    @include mixins.addBorder($color: colors.$modal-window-border-color);
+    width: fit-content;
+    border-radius: 5px;
+    @include mixins.flexDispaly($flex-direction: column, $gap: 40px);
+}
+
+.modal-window-header{
+    @include mixins.flexDispaly($justify-content: space-between, $align-items: center);
+}
+
+.modal-window-header h3{
+    @include mixins.text($font-size: 24px, $font-weight: 700);
+}
+
+.modal-window-header img{
+    width: 32px;
+    cursor: pointer;
+}
+
+.modal-window-container.show-modal{
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content{
+    @include mixins.flexDispaly($flex-direction: column, $gap: 10px);
+}
+
+
+@media screen and (max-width: 650px) {
+
+    .modal-window-container .modal-window:has(.info-modal-content){
+        width: calc(100vw - 50px);
+    } 
+
+    .modal-window-container .modal-window-header{
+        margin-bottom: 22px;
+    }
+
+    .modal-window-container .modal-window-header img{
+        height: 26px;
+    }
+
+    .modal-window-header h2{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .modal-window-container{
+        font-size: 14px;
+    }
+
+    .modal-window-container .modal-window:has(.info-modal-content){
+        width: calc(100vw - 10px);
+        min-width: 186px;
+    } 
+
+    .modal-window p{
+        font-size: 14px;
+    }
+
+    .modal-window-header h3{
+        font-size: 18px;
+    }
+    
+    .modal-window-header img{
+        width: 22px;
+    }
+}

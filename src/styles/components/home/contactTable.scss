@@ -1,0 +1,171 @@
+@use './../../colors';
+@use './../../mixins';
+
+
+.contacts-table-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+.contact-content-table {
+    @include mixins.text($font-size: 14px, $font-family: "Nobile", $font-weight: 400);
+    width: max-content;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+
+.contact-content-table thead tr {
+    background-color: colors.$table-header-primary-background-color;
+}
+
+.contact-content-table tbody tr td {
+    background-color: colors.$table-body-primary-background-color;
+}
+
+.contact-content-table th, td {
+    padding: 12px 8px;
+    font-size: 14px;
+    text-align: center;
+    height: calc(48px - 24px);
+}
+
+.contact-content-table td {
+    white-space: nowrap;
+}
+
+.name-column-element {
+    box-sizing: border-box;
+    min-width: 85px;
+    padding-left: 0px;
+}
+
+.surname-column-element {
+    box-sizing: border-box;
+    min-width: 96px;
+}
+
+.birthdate-column-element {
+    box-sizing: border-box;
+    min-width: 124px;
+}
+
+.address-column-element {
+    box-sizing: border-box;
+    min-width: 147px;
+}
+
+.zipnumber-column-element {
+    box-sizing: border-box;
+    min-width: 90px;
+}
+
+.tel-column-element {
+    box-sizing: border-box;
+    min-width: 114px;
+}
+
+.email-column-element {
+    padding-right: 0px;
+}
+
+.navigation-left-column-element,
+.navigation-right-column-element {
+    background-color: #c4cbe2;
+    position: sticky;
+    z-index: 2;
+}
+
+.navigation-right-column-element {
+    background-color: #c4cbe2;
+    position: sticky;
+    right: 140px;
+    z-index: 2;
+}
+
+
+.navigation-left-column-element {
+    left: 0;
+}
+
+.navigation-right-column-element {
+    right: 100px;
+    min-width: 10px;
+}
+
+.scroll-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    height: 14px;
+}
+
+.scroll-btn.hidden {
+    display: none;
+}
+
+.action-column-element {
+    box-sizing: border-box;
+    min-width: 100px;
+    border-left: 1px solid colors.$table-action-column-element-border-color;
+    position: sticky;
+    right: 0;
+    background: colors.$table-header-primary-background-color;
+    z-index: 2;
+}
+
+.action-td-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-table-container::-webkit-scrollbar {
+    height: 12px;
+}
+  
+.contact-table-container::-webkit-scrollbar-track {
+    border: 1px solid #B5B1B1;
+    border-radius: 0px;
+}
+   
+.contact-table-container::-webkit-scrollbar-thumb {
+    background: #9da3d6; 
+    border-radius: 0px;
+}
+  
+.contact-table-container::-webkit-scrollbar-thumb:hover {
+    background: #081691;
+    cursor: pointer; 
+}
+
+@media screen and (max-width: 490px) {
+
+    .contact-content-table th, .contact-content-table td{
+        font-size: 12px;
+        padding: 8px 4px;
+        height: 12px;
+    }
+
+    .navigation-left-column-element img, .navigation-right-column-element img{
+        height: 12px;
+    }
+    
+    .action-td-container img{
+        height: 16.4px;
+    }
+
+    .navigation-right-column-element{
+        right: 88px;  
+    }
+
+    .action-column-element{
+        box-sizing: border-box;
+        min-width: 88px;
+    }
+
+}

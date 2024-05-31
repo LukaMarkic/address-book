@@ -1,0 +1,58 @@
+@use './../../colors';
+@use './../../mixins';
+
+.contact-table-window{
+    background-color: colors.$windows-background-primary-color;
+    border: 1px solid colors.$table-windiw-primary-border-color;
+    padding: 38px 50px;
+    @include mixins.flexDispaly($flex-direction: column, $gap: 14px);
+    min-width: 330px;
+    text-align: start;
+}
+
+.contact-table-window-top-segemnt{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-table-window-top-segemnt h2{
+    font-size: 22px;
+    font-family: "Dosis", sans-serif;
+    
+}
+
+.contact-table-window-top-segemnt > div {
+    @include mixins.flexDispaly($justify-content: end, $gap: 24px);
+}
+
+
+@media screen and (max-width: 490px) {
+
+    .contact-table-window{
+        min-width: 190px;
+        padding: 10px 18px;
+    }
+
+    .contact-table-window-top-segemnt{
+        gap: 20px;
+    }
+
+    .contact-table-window-top-segemnt > h2{
+        font-size: 18px;
+    }
+
+    .contact-table-window-top-segemnt label{
+        font-size: 13px;
+    }
+
+    .contact-table-window-top-segemnt>div{
+        flex-direction: column-reverse;
+        gap: 14px;
+    }
+
+    .contact-table-window-top-segemnt>div>div{
+        width: fit-content;
+    }
+
+}

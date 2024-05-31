@@ -1,0 +1,92 @@
+@use './../../colors';
+@use './../../mixins';
+
+.contact-form-contianer{
+    margin-top: 40px;
+    padding: 30px 60px 40px;
+    background-color: colors.$windows-background-primary-color;
+    @include mixins.flexDispaly($flex-direction: column, $gap: 50px, $align-items: start);
+    @include mixins.addBorder($color: colors.$contianer-primary-border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 628px;
+}
+
+.contact-form-inputs-container{
+    box-sizing: border-box;
+    @include mixins.flexDispaly($gap: 30px);
+    flex-wrap: wrap;
+}
+
+.contact-form-inputs-container>div{
+    flex: 1 1 20%;
+    box-sizing: border-box;
+}
+
+.contact-form-contianer h2{
+    @include mixins.text($font-size: 24px, $font-weight: 700);
+}
+
+.contact-form-contianer > form {
+    @include mixins.flexDispaly($flex-direction: column, $gap: 20px);
+}
+
+.contact-form-button{
+    font-family: "Dosis", sans-serif;
+    @include mixins.text($font-weight: 600, $font-size: 16px, $color: colors.$contact-submit-btn-text-color);
+    background-color: colors.$contact-submit-btn-primary-background-color;
+    padding: 10px 14px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 183px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 28px;
+}
+
+.contact-form-button:hover{
+    cursor: pointer;
+    transition: 450ms;
+    background-color: colors.$contact-submit-btn-hover-background-color;
+}
+
+.contact-form-button:not(:hover){
+    transition: 750ms;
+}
+
+@media screen and (max-width: 520px) {
+
+    body{
+        min-width: 240px;
+    }
+
+    .contact-form-contianer h2{
+        font-size: 18px;
+    }
+    
+    .contact-form-contianer{
+        max-width: calc(100vw - 40px);
+        gap: 45px;
+        padding: 30px 20px 30px;   
+    }
+    .contact-form-inputs-container>div{
+        flex: 1 1 50%;
+        box-sizing: border-box;
+    }
+
+    .contact-form-contianer input:not([type="date"], [type="tel"]){
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+}
+
+@media screen and (max-width: 240px) {
+
+    .contact-form-contianer{
+        min-width: 240px;
+    }
+
+}
+
+
