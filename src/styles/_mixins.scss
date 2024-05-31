@@ -1,0 +1,31 @@
+@use './colors';
+
+@mixin text($color: colors.$primar-text-color, $font-family: 'Dosis', $font-size: 18px, $font-style: normal, $font-weight: 400, $line-height: normal){
+    color: $color;
+    font-family: $font-family, sans-serif;
+    font-size: $font-size;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    line-height: $line-height;
+}
+
+@mixin flexDispaly($flex-direction: row, $justify-content: default, $align-items: default, $gap:0){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+@mixin icon($background-color: none, $width: 14px, $height: 14px, $padding: 0px){
+    background-color: $background-color;
+    width: $width;
+    height: $height; 
+    padding: $padding;
+}
+
+@mixin addBorder($width: 1px, $type: solid, $color: black){
+    border: none;
+    border: $width $type $color;
+}
+
