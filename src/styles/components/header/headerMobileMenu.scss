@@ -1,6 +1,20 @@
 @use './../../colors';
 @use './../../mixins';
 
+@mixin mobileMenuBtn($color: #FFFFFF, $border-color: #CCF0FA, $border-hover-color: #5D76B6){
+    color: $color;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    @include mixins.addBorder($color: $border-color);
+
+    &:hover{
+        transition: 750ms;
+        border-color: $border-hover-color;
+    }
+}
+
+
 .header-mobile-menu{
     padding: 12px 0px;
     @include mixins.flexDispaly($flex-direction: column, $align-items: center, $gap: 30px);
@@ -24,16 +38,7 @@
 
 #mobile-menu-logout-btn{
     padding: 8px 24px;
-    color: #FFFFFF;
-    background-color: transparent;
-    cursor: pointer;
-    border-radius: 4px;
-    @include mixins.addBorder($color: #ccd0da)
-}
-
-#mobile-menu-logout-btn:hover{
-    transition: 750ms;
-    border: 1px solid #5D76B6;
+    @include mobileMenuBtn();
 }
 
 .header-mobile-menu > nav{
@@ -69,6 +74,11 @@
     img{
         height: 14px;
     }
+}
+
+#mobile-menu-change-pwd-btn{
+    padding: 8px 10px;
+    @include mobileMenuBtn($border-hover-color: #0AC50A);
 }
 
 @media screen and (min-width: 560px) {
