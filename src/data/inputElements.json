@@ -1,0 +1,41 @@
+[
+    {
+        "label": "Ime",
+        "name": "name",
+        "type": "text",
+        "placeholder": "Ivan",
+        "isRequired": true,
+        "width": "236px"
+    },
+    {
+        "label": "Prezime",
+        "name": "surname",
+        "type": "text",
+        "placeholder": "Horvat",
+        "isRequired": true,
+        "width": "236px"
+    },
+    {
+        "label": "Ulica i kućni broj",
+        "name": "address",
+        "type": "text",
+        "placeholder": "Zagrebačka avenija bb",
+        "isRequired": false,
+        "width": "350px"
+    },    {
+        "label": "Poštanski broj",
+        "name": "zip",
+        "type": "text",
+        "placeholder": "10000",
+        "isRequired": false,
+        "width": "125px"
+    },
+    {
+        "label": "E-mail adresa",
+        "name": "email",
+        "type": "email",
+        "placeholder": "ivan.horvat@gmail.com",
+        "isRequired": true,
+        "width": "320px"
+    }
+]
